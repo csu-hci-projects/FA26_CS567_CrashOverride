@@ -19,3 +19,6 @@ dist/
 # Editor / OS
 .vscode/
 .DS_Store
+# cloudflared binary (see HOSTING.md)
+cloudflared
+cloudflared.exe
