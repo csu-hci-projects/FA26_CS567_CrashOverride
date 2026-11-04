@@ -29,7 +29,7 @@ class OpenAIProvider:
         if not os.environ.get("OPENAI_API_KEY"):
             raise RuntimeError("Set OPENAI_API_KEY in .env (see .env.example)")
 
-        self.model = model or os.environ.get("OPENAI_MODEL", "gpt-4")
+        self.model = model or os.environ.get("OPENAI_MODEL", "gpt-4.1")
         self.temperature = float(os.environ.get("OPENAI_TEMPERATURE", "0"))
         self.seed = int(os.environ.get("OPENAI_SEED", "567"))
         self.client = OpenAI()
@@ -45,7 +45,7 @@ class OpenAIProvider:
                    "messages": [{"role": "system", "content": system_prompt},
                                 {"role": "user", "content": user_prompt}]}
 
-        # JSON mode is not supported by every model (e.g. the original gpt-4), so fall back
+        # JSON mode is not supported by every model (e.g. the original gpt-4.1), so fall back
         # to plain text and let the agent extract the JSON object.
         from openai import BadRequestError
         try:
