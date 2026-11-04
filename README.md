@@ -28,6 +28,8 @@ Immediate Action Items
 
 Running the Prototype
 
+Running participant sessions (remote through public links, or in person)? See HOSTING.md.
+
 All commands run from the repository root with Python 3.10+.
 
     pip install -r requirements.txt
