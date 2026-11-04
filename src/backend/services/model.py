@@ -29,7 +29,7 @@ class OpenAIProvider:
         if not os.environ.get("OPENAI_API_KEY"):
             raise RuntimeError("Set OPENAI_API_KEY in .env (see .env.example)")
 
-        self.model = model or os.environ.get("OPENAI_MODEL", "gpt-4")
+        self.model = model or os.environ.get("OPENAI_MODEL", "gpt-4.1")
         self.temperature = float(os.environ.get("OPENAI_TEMPERATURE", "0"))
         self.seed = int(os.environ.get("OPENAI_SEED", "567"))
         self.client = OpenAI()
