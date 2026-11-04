@@ -45,7 +45,7 @@ class OpenAIProvider:
                    "messages": [{"role": "system", "content": system_prompt},
                                 {"role": "user", "content": user_prompt}]}
 
-        # JSON mode is not supported by every model (e.g. the original gpt-4.1), so fall back
+        # JSON mode is not supported by every model (e.g. the original gpt-4), so fall back
         # to plain text and let the agent extract the JSON object.
         from openai import BadRequestError
         try:
